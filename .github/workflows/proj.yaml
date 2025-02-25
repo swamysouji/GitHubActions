@@ -33,6 +33,11 @@ jobs:
         mkdir -p build
         # Simulate build output by creating a file
         touch build/output_file.txt
+        echo $github.sha > build/output_file.txt
+        echo $github.event_name >> build/output_file.txt
+        echo $github.repository >> build/output_file.txt
+        echo $github.repository_owner >> build/output_file.txt
+        echo $github.ref >> build/output_file.txt
 
     # Run tests using pytest
     - name: Run tests
