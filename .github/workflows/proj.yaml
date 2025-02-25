@@ -34,10 +34,9 @@ jobs:
         # Simulate build output by creating a file
         touch build/output_file.txt
         # the github object provides access to context data
-        echo ${{github.action}} > build/output_file.txt
-        echo ${{github.event_name}} >> build/output_file.txt
-        echo ${{github.action_repository}} >> build/output_file.txt
-        echo ${{github.repository_owner}} >> build/output_file.txt
+        echo "action: ${{github.action}}" > build/output_file.txt
+        echo "event:${{github.event_name}}" >> build/output_file.txt
+        echo "repo owner: ${{github.repository_owner}}" >> build/output_file.txt
 
 
     # Run tests using pytest
